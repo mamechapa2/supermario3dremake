@@ -3,18 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level01_Load : MonoBehaviour
+public class MenuButtons : MonoBehaviour
 {
     // Start is called before the first frame update
-    IEnumerator Start()
+    void Start()
     {
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(1);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

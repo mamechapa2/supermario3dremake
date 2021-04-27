@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level01Death : MonoBehaviour
+public class Level01End : MonoBehaviour
 {
-    public AudioSource deathSound;
+    public GameObject fadeScreen;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,10 @@ public class Level01Death : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider col)
     {
-        GlobalLives.lives -= 1;
-        deathSound.Play();
-        player.transform.localScale -= new Vector3(0, (float)0.7, 0);
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
+        fadeScreen.SetActive(true);
+        fadeScreen.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds((float)0.5);
+        fadeScreen.GetComponent<Animator>().enabled = false;
+        SceneManager.LoadScene(4);
     }
 }
