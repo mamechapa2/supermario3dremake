@@ -20,7 +20,6 @@ public class MushroomCollect : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        print(col.name);
         if(col.gameObject.tag == "Player")
         {
             this.transform.position = new Vector3(0, -1000, 0);
