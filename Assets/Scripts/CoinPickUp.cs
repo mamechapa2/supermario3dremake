@@ -22,6 +22,6 @@ public class CoinPickUp : MonoBehaviour
         transform.position = new Vector3(0, -1000, 0);
         coinAudio.Play();
         GlobalCoins.coinCount += 1;
-        print("aaaaaaaa");
+        print("1 coin");
     }
 }
