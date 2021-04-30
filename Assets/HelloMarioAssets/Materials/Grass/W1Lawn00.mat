@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: W1Lawn00
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _METALLICGLOSSMAP _NORMALMAP _SPECULARHIGHLIGHTS_OFF
+  m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -69,8 +69,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 2800000, guid: 5bc8e9e4cd5524c4e8d21a8003ca6136, type: 3}
-        m_Scale: {x: 25, y: 25}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 1, y: 1}
     - _EmissionMapInvT:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -80,9 +80,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5bc8e9e4cd5524c4e8d21a8003ca6136, type: 3}
-        m_Scale: {x: 25, y: 25}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: a68fbc3b404435b4090df7d17d55f734, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 1, y: 1}
     - _MainTexInvT:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -92,7 +92,7 @@ Material:
         m_Scale: {x: 0.2, y: 0.2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 5e4621f39f1f21149b8666ddfd3f6c06, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMapInvT:
@@ -167,7 +167,7 @@ Material:
     - _DetailNormalColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}
     - _DetailNormalColorSpaceVector3: {r: 0, g: 0, b: 0, a: 0}
     - _DetailNormalMapDXTScalers: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 0.60784316}
+    - _EmissionColor: {r: 0, g: 0.43527526, b: 0.013655695, a: 0.60784316}
     - _EmissionColorSpaceOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorSpaceVector1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}

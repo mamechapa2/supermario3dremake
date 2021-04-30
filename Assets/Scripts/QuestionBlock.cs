@@ -21,6 +21,7 @@ public class QuestionBlock : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider col)
     {
+        print("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
         questionBlock.SetActive(false);
         deadBlock.SetActive(true);
         yield return new WaitForSeconds((float)0.2);
