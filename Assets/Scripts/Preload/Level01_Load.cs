@@ -9,7 +9,7 @@ public class Level01_Load : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(6);
     }
 
     // Update is called once per frame
