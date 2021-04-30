@@ -11,6 +11,7 @@ public class PipeEntry : MonoBehaviour
     public Animator FadeScreenAnimator;
     public GameObject FadeScreenObject;
     public AudioSource PipeSound;
+    public GameObject exit;
 
     public int StoodOn;
     public int qwerty;
@@ -60,7 +61,7 @@ public class PipeEntry : MonoBehaviour
         yield return new WaitForSeconds((float)0.5);
         FadeScreenAnimator.enabled = false;
         pipeCollider.enabled = false;
-        MainPlayer.transform.position = new Vector3(10, -4, 0);
+        MainPlayer.transform.position = exit.transform.position;
         FadeScreenAnimator.enabled = true;
         yield return new WaitForSeconds(1);
         FadeScreenAnimator.enabled = false;
