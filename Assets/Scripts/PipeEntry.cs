@@ -54,7 +54,9 @@ public class PipeEntry : MonoBehaviour
     IEnumerator WaitingForPipe()
     {
         PipeSound.Play();
+
         FadeScreenObject.SetActive(true);
+
         pipeCollider.enabled = true;
         yield return new WaitForSeconds((float)0.5);
         FadeScreenAnimator.enabled = true;

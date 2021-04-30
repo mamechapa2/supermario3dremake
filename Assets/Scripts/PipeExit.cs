@@ -28,7 +28,7 @@ public class PipeExit : MonoBehaviour
         fadeScreen.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds((float)0.5);
         fadeScreen.GetComponent<Animator>().enabled = false;
-        mainPlayer.transform.position = new Vector3(24, 0, (float)0.5);
+        //mainPlayer.transform.position = new Vector3(24, 0, (float)0.5);
         pipeEntry.GetComponent<Animator>().enabled = true;
         fadeScreen.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds((float)0.49);
