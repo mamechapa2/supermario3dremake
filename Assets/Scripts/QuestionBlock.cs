@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class QuestionBlock : MonoBehaviour
 {
-    public GameObject questionBlock;
+    public GameObject block;
     public GameObject deadBlock;
-    public GameObject mushroom;
+    public GameObject blockObject;
+    public Animator animationBlock;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,14 @@ public class QuestionBlock : MonoBehaviour
     private IEnumerator OnTriggerEnter(Collider col)
     {
         print("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        questionBlock.SetActive(false);
+        blockObject.SetActive(true);
+        block.SetActive(false);
         deadBlock.SetActive(true);
-        yield return new WaitForSeconds((float)0.2);
-        mushroom.SetActive(true);
+        animationBlock.enabled = true;
+        yield return new WaitForSeconds(0.10F);
+        //animationBlock.enabled = false;
+        
+        print("Asdasdadada");
+        
     }
 }
