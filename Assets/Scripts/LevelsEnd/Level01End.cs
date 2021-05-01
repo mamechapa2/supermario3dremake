@@ -25,6 +25,6 @@ public class Level01End : MonoBehaviour
         fadeScreen.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds((float)0.5);
         fadeScreen.GetComponent<Animator>().enabled = false;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0); //CAMBIAAAAAAAAAAAAAAAAAAAAAR
     }
 }

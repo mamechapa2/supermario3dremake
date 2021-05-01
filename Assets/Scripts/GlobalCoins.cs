@@ -8,6 +8,7 @@ public class GlobalCoins : MonoBehaviour
     public GameObject coinDisplay;
     public static int  coinCount;
     public int internalCoin;
+    public AudioSource lifeSound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +21,13 @@ public class GlobalCoins : MonoBehaviour
     {
         internalCoin = coinCount;
         coinDisplay.GetComponent<Text>().text = "Coins: " + coinCount;
+
+        if(coinCount == 100)
+        {
+            coinCount = 0;
+            internalCoin = 0;
+            lifeSound.Play();
+            GlobalLives.lives += 1;
+        }
     }
 }

@@ -25,6 +25,6 @@ public class Level01Death : MonoBehaviour
         deathSound.Play();
         player.transform.localScale -= new Vector3(0, (float)0.7, 0);
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
