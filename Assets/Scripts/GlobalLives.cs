@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GlobalLives : MonoBehaviour
 {
+    public int startingLives;
     public static int lives = 3;
     public int internalLives;
     public GameObject lifeTextBox;
@@ -13,7 +14,7 @@ public class GlobalLives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        lives = startingLives;
     }
 
     // Update is called once per frame

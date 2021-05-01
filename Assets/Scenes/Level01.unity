@@ -3519,6 +3519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d993946469860bc46828c83a39a70175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingLives: 1
   internalLives: 0
   lifeTextBox: {fileID: 395022766}
 --- !u!4 &364905110
