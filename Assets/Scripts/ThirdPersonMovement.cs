@@ -19,10 +19,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    Vector3 velocity;
+    public Vector3 velocity;
     public float gravity = -9.8f;
     bool isGrounded;
-
 
     private Animator animator;
     // Start is called before the first frame update
@@ -37,10 +36,10 @@ public class ThirdPersonMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
-        {
-            animator.SetFloat("Speed", 0);
+        {   
             velocity.y = -2;
         }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -53,16 +52,19 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
             Vector3 moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+            
             animator.SetFloat("Speed", 0.5f);
+
             controller.Move(moveDirection.normalized * speed * Time.deltaTime);
         }
         else
         {
-            
+            animator.SetFloat("Speed", 0);
         }
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
+            print("jump");
             animator.SetFloat("Speed", 1);
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
