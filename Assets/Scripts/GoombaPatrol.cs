@@ -18,9 +18,11 @@ public class GoombaPatrol : MonoBehaviour
     public float runningSpeed;
     public float visionRadius;
     private bool perseguir = false;
+    private float initialY;
     // Start is called before the first frame update
     void Start()
     {
+        initialY = transform.position.y;
         animator = GetComponentInChildren<Animator>();
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
@@ -55,6 +57,7 @@ public class GoombaPatrol : MonoBehaviour
             if (perseguir)
             {
                 animator.speed = 1;
+                target.y = initialY;
                 transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime * 2);
                 transform.LookAt(target);
             }
