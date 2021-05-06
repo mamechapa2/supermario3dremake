@@ -19,21 +19,13 @@ public class BrickBlock : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider col)
+    private IEnumerator OnTriggerEnter(Collider col)
     {
         print("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
         block.SetActive(false);
         deadBlock.SetActive(true);
-        StartCoroutine(delete());
-
-    }
-
-    private IEnumerator delete()
-    {
         yield return new WaitForSeconds(0.40F);
         animationBlock.enabled = false;
         Destroy(deadBlock);
-
-        print("Asdasdadada");
     }
 }

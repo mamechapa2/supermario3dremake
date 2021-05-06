@@ -23,11 +23,12 @@ public class CoinBrickBlock : MonoBehaviour
     private IEnumerator OnTriggerEnter(Collider col)
     {
         print("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        Destroy(deadBlock);
         blockObject.SetActive(true);
         block.SetActive(false);
         deadBlock.SetActive(true);
-        yield return new WaitForSeconds(0.40F);
-        //animationBlock.enabled = false;
+        yield return new WaitForSeconds(0.4F);
+        animationBlock.enabled = false;
         Destroy(deadBlock);
 
         print("Asdasdadada");

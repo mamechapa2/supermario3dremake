@@ -36,5 +36,7 @@ public class PipeExit : MonoBehaviour
         yield return new WaitForSeconds(1);
         pipeEntry.GetComponent<Animator>().enabled = false;
         fadeScreen.SetActive(false);
+
+        print("wtf salida");
     }
 }

@@ -68,5 +68,7 @@ public class PipeEntry : MonoBehaviour
         yield return new WaitForSeconds(1);
         FadeScreenAnimator.enabled = false;
         FadeScreenObject.SetActive(false);
+
+        print("wtf");
     }
 }
