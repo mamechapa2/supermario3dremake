@@ -20,7 +20,7 @@ public class GlobalStars : MonoBehaviour
     void Update()
     {
         internalStar = starsCount;
-        starsDisplay.GetComponent<Text>().text = "Stars: " + starsCount;
+        starsDisplay.GetComponent<Text>().text = "" + starsCount;
 
         if(starsCount == maxNumStars && !activeBefore)
         {

@@ -20,7 +20,7 @@ public class GlobalCoins : MonoBehaviour
     void Update()
     {
         internalCoin = coinCount;
-        coinDisplay.GetComponent<Text>().text = "Coins: " + coinCount;
+        coinDisplay.GetComponent<Text>().text = "" + coinCount;
 
         if(coinCount == 100)
         {
