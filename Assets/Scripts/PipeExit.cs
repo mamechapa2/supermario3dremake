@@ -23,6 +23,8 @@ public class PipeExit : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider col)
     {
+        print("wtf salida");
+        GetComponent<BoxCollider>().isTrigger = false;
         pipeSound.Play();
         fadeScreen.SetActive(true);
         fadeScreen.GetComponent<Animator>().enabled = true;
@@ -37,6 +39,6 @@ public class PipeExit : MonoBehaviour
         pipeEntry.GetComponent<Animator>().enabled = false;
         fadeScreen.SetActive(false);
 
-        print("wtf salida");
+        
     }
 }

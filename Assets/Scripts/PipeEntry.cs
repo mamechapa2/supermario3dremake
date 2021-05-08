@@ -14,13 +14,11 @@ public class PipeEntry : MonoBehaviour
     public GameObject exit;
 
     public int StoodOn;
-    public int qwerty;
     
 
     void OnTriggerEnter(Collider col)
     {
         StoodOn = 1;
-        MainPlayer = col.gameObject;
         print(StoodOn);
     }
     void OnTriggerExit(Collider col)
@@ -42,33 +40,36 @@ public class PipeEntry : MonoBehaviour
         {
             if (StoodOn == 1)
             {
-                transform.position = new Vector3(0, -1000, 0);
+                MainPlayer.transform.position = exit.transform.position;
                 StartCoroutine(WaitingForPipe());
-                //pipeCollider.enabled = true;               
-                qwerty = 1;
-
             }
         }
     }
 
-    IEnumerator WaitingForPipe()
+    private IEnumerator WaitingForPipe()
     {
+        MainPlayer.transform.position = exit.transform.position;
         PipeSound.Play();
 
         FadeScreenObject.SetActive(true);
-
         pipeCollider.enabled = true;
+
         yield return new WaitForSeconds((float)0.5);
+
         FadeScreenAnimator.enabled = true;
-        yield return new WaitForSeconds((float)0.5);
+        
+
+        yield return new WaitForSeconds((float)1.5);
+
         FadeScreenAnimator.enabled = false;
         pipeCollider.enabled = false;
-        MainPlayer.transform.position = exit.transform.position;
         FadeScreenAnimator.enabled = true;
+
         yield return new WaitForSeconds(1);
         FadeScreenAnimator.enabled = false;
         FadeScreenObject.SetActive(false);
 
         print("wtf");
+        MainPlayer.transform.position = exit.transform.position;
     }
 }
