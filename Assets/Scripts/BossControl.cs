@@ -6,7 +6,6 @@ public class BossControl : MonoBehaviour
 {
     public GameObject prefab;
     public Transform startPos;
-    public int cantidadObstaculos;
     public float waitTimeBeforeShooting;
 
     private bool shootNow = true;
@@ -29,7 +28,7 @@ public class BossControl : MonoBehaviour
     public IEnumerator shoot()
     {
         shootNow = false;
-        Instantiate(prefab, startPos.position, Quaternion.identity);
+        Instantiate(prefab, prefab.transform.position, Quaternion.identity).SetActive(true);
         yield return new WaitForSeconds(waitTimeBeforeShooting);
         shootNow = true;
     }
