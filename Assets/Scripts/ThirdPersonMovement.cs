@@ -40,6 +40,11 @@ public class ThirdPersonMovement : MonoBehaviour
             velocity.y = -2;
         }
 
+        if (!isGrounded)
+        {
+            animator.SetFloat("Speed", 1);
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 

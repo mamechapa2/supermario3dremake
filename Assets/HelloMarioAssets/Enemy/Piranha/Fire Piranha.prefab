@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7add3c70dd398f04b914355488bcbaaf, type: 2}
+    - target: {fileID: 2473182854087215042, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562270618800786134, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5730625471432164250, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,6 +79,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7add3c70dd398f04b914355488bcbaaf, type: 2}
+    - target: {fileID: 6802881567447168678, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003504775829822522, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7912620800510500065, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -79,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7add3c70dd398f04b914355488bcbaaf, type: 2}
+    - target: {fileID: 8762165271108694708, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8780924545836249481, guid: fdb150df47cb25c4499c79f861d4bec8, type: 3}
       propertyPath: m_Name
       value: Fire Piranha
