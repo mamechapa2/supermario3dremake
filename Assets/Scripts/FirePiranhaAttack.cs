@@ -7,6 +7,8 @@ public class FirePiranhaAttack : MonoBehaviour
     public GameObject prefab;
     public Transform startPos;
     public float waitTimeBeforeShooting;
+    public GameObject player;
+    public float visionRadius;
 
     public Animator animator;
 
@@ -20,8 +22,8 @@ public class FirePiranhaAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (shootNow)
+        float distToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        if (shootNow && distToPlayer < visionRadius)
         {
             StartCoroutine(shoot());
         }

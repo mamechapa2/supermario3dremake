@@ -25,6 +25,7 @@ public class MushroomCollect : MonoBehaviour
             this.transform.position = new Vector3(0, -1000, 0);
             growSound.Play();
             player.transform.localScale += new Vector3((float)0.3, (float)0.3, (float)0.3);
+            GlobalLives.bigMario = true;
         }
     }
 }

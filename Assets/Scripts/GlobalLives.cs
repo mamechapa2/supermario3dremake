@@ -10,6 +10,7 @@ public class GlobalLives : MonoBehaviour
     public static int lives = 3;
     public int internalLives;
     public GameObject lifeTextBox;
+    public static bool bigMario = false;
 
     // Start is called before the first frame update
     void Start()

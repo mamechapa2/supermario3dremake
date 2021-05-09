@@ -24,15 +24,23 @@ public class Level02Death : MonoBehaviour
     {
         if (col.tag.Equals("Player"))
         {
-            player.GetComponent<ThirdPersonMovement>().enabled = false;
-            player.GetComponent<CharacterController>().enabled = false;
-            levelSound.Stop();
-            print(this.name + " - " + col.name);
-            GlobalLives.lives -= 1;
-            deathSound.Play();
-            player.transform.localScale -= new Vector3(0, (float)0.7, 0);
-            yield return new WaitForSeconds(3);
-            SceneManager.LoadScene(4);
+            if (!GlobalLives.bigMario)
+            {
+                player.GetComponent<ThirdPersonMovement>().enabled = false;
+                player.GetComponent<CharacterController>().enabled = false;
+                levelSound.Stop();
+                print(this.name + " - " + col.name);
+                GlobalLives.lives -= 1;
+                deathSound.Play();
+                player.transform.localScale -= new Vector3(0, (float)0.7, 0);
+                yield return new WaitForSeconds(3);
+                SceneManager.LoadScene(4);
+            }
+            else
+            {
+                GlobalLives.bigMario = false;
+                player.transform.localScale -= new Vector3((float)0.3, (float)0.3, (float)0.3);
+            }
         }
     }
 }

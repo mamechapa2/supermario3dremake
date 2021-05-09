@@ -24,6 +24,8 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isGrounded;
 
     private Animator animator;
+
+    public AudioSource jumpAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,18 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             animator.SetFloat("Speed", 1);
         }
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            print("jump");
+            jumpAudio.Play();
+            animator.SetFloat("Speed", 1);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -67,15 +81,6 @@ public class ThirdPersonMovement : MonoBehaviour
             animator.SetFloat("Speed", 0);
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
-        {
-            print("jump");
-            animator.SetFloat("Speed", 1);
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
+        
     }
 }
