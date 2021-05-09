@@ -6,7 +6,7 @@ public class GlobalStars : MonoBehaviour
     public GameObject starsDisplay;
     public static int  starsCount = 0;
     public int internalStar;
-    public int maxNumStars = 1;
+    public int maxNumStars = 3;
     public GameObject end;
     private bool activeBefore = false;
 
