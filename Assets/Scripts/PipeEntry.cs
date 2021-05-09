@@ -40,7 +40,6 @@ public class PipeEntry : MonoBehaviour
         {
             if (StoodOn == 1)
             {
-                MainPlayer.transform.position = exit.transform.position;
                 StartCoroutine(WaitingForPipe());
             }
         }
@@ -48,7 +47,6 @@ public class PipeEntry : MonoBehaviour
 
     private IEnumerator WaitingForPipe()
     {
-        MainPlayer.transform.position = exit.transform.position;
         PipeSound.Play();
 
         FadeScreenObject.SetActive(true);
@@ -57,7 +55,7 @@ public class PipeEntry : MonoBehaviour
         yield return new WaitForSeconds((float)0.5);
 
         FadeScreenAnimator.enabled = true;
-        
+        MainPlayer.transform.position = exit.transform.position;
 
         yield return new WaitForSeconds((float)1.5);
 
@@ -70,6 +68,6 @@ public class PipeEntry : MonoBehaviour
         FadeScreenObject.SetActive(false);
 
         print("wtf");
-        MainPlayer.transform.position = exit.transform.position;
+        
     }
 }
