@@ -24,9 +24,14 @@ public class FireballLockPlayer : MonoBehaviour
         if (!destroy)
         {
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            if(transform.position == target)
+            {
+                Destroy(this.gameObject);
+            }
         }
         else
         {
+            print("destroy");
             Destroy(this.gameObject);
         }
     }
@@ -40,9 +45,21 @@ public class FireballLockPlayer : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        print("1 trigger");
         if (!other.tag.Equals("Player"))
         {
+            print("2 trigger");
             Destroy(this.gameObject);
+
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        print("1 collision");
+        if (!collision.gameObject.tag.Equals("Player")){
+            print("2 collision");Destroy(this.gameObject);
+            
         }
     }
 }

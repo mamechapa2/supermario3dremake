@@ -28,7 +28,7 @@ public class BossControl : MonoBehaviour
     public IEnumerator shoot()
     {
         shootNow = false;
-        Instantiate(prefab, prefab.transform.position, Quaternion.identity).SetActive(true);
+        Instantiate(prefab, startPos.position, Quaternion.identity).SetActive(true);
         yield return new WaitForSeconds(waitTimeBeforeShooting);
         shootNow = true;
     }

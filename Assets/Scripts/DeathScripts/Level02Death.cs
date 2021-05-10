@@ -22,6 +22,7 @@ public class Level02Death : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider col)
     {
+        print("heryeyeyeyeye");
         if (col.tag.Equals("Player"))
         {
             if (!GlobalLives.bigMario)

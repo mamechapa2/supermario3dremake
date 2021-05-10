@@ -33,7 +33,7 @@ public class FirePiranhaAttack : MonoBehaviour
     {
         shootNow = false;
         animator.speed = 0.5f;
-        Instantiate(prefab, prefab.transform.position, Quaternion.identity).SetActive(true);
+        Instantiate(prefab, startPos.position, Quaternion.identity).SetActive(true);
         yield return new WaitForSeconds(2);
         animator.speed = 0;
         
