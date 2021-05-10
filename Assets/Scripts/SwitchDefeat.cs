@@ -5,7 +5,6 @@ using UnityEngine;
 public class SwitchDefeat : MonoBehaviour
 {
     public Transform switchObject;
-    private bool activated = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,7 @@ public class SwitchDefeat : MonoBehaviour
     {
         GetComponent<BoxCollider>().enabled = false;
         switchObject.position = new Vector3(switchObject.position.x, switchObject.position.y - 0.29f, switchObject.position.z);
-        activated = true;
         print("tttttttttttttttt");
+        BossControl.setDie();
     }
 }

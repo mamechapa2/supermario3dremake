@@ -9,6 +9,7 @@ public class BossControl : MonoBehaviour
     public float waitTimeBeforeShooting;
 
     private bool shootNow = true;
+    public static bool die = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,14 @@ public class BossControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (shootNow)
+        if (die)
+        {
+            //CAMBIAR ANIMACIOn
+            StartCoroutine(dissapear());
+            //PONERLE MUSIQUILLA
+            //TP AL PJ A LA SALA CON EL TOAD
+        }
+        if (shootNow && !die)
         {
             StartCoroutine(shoot());
         }
@@ -31,6 +38,18 @@ public class BossControl : MonoBehaviour
         Instantiate(prefab, startPos.position, Quaternion.identity).SetActive(true);
         yield return new WaitForSeconds(waitTimeBeforeShooting);
         shootNow = true;
+    }
+
+    public static void setDie()
+    {
+        die = true;
+        print("cambiado");
+    }
+
+    public IEnumerator dissapear()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(this.gameObject);
     }
 
 
