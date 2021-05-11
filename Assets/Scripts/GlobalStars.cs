@@ -16,6 +16,17 @@ public class GlobalStars : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        if (GameObject.Find("StarsMonitor") != this.gameObject)
+        {
+            Destroy(GameObject.Find("StarsMonitor"));
+        }
+        print("awake");
+
+    }
+
     // Update is called once per frame
     void Update()
     {

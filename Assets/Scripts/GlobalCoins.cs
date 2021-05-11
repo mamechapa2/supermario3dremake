@@ -16,6 +16,17 @@ public class GlobalCoins : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        if (GameObject.Find("CoinMonitor") != this.gameObject)
+        {
+            Destroy(GameObject.Find("CoinMonitor"));
+        }
+        print("awake");
+
+    }
+
     // Update is called once per frame
     void Update()
     {
