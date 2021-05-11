@@ -8,6 +8,7 @@ public class PlatformMove : MonoBehaviour
     public float resetPointBot;
     public float currentPoint;
     public int direction; //1 UP, 0 DOWN
+    public float speed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +22,11 @@ public class PlatformMove : MonoBehaviour
 
         if(direction == 1)
         {
-            transform.Translate(Vector3.up * Time.deltaTime);
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
         else
         {
-            transform.Translate(Vector3.down * Time.deltaTime);
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
         
         if(currentPoint > resetPointTop && direction == 1)

@@ -7,7 +7,7 @@ public class GlobalStars : MonoBehaviour
     public static int  starsCount = 0;
     public int internalStar;
     public int maxNumStars = 3;
-    public GameObject end;
+    public GameObject end = null;
     private bool activeBefore = false;
 
     // Start is called before the first frame update
@@ -33,11 +33,16 @@ public class GlobalStars : MonoBehaviour
         internalStar = starsCount;
         starsDisplay.GetComponent<Text>().text = "" + starsCount;
 
-        if(starsCount == maxNumStars && !activeBefore)
+        if(starsCount >= maxNumStars && !activeBefore && end != null)
         {
             activeBefore = true;
             print("final activo");
             end.SetActive(true);
+        }
+
+        if (Input.GetKeyDown("p"))
+        {
+            starsCount = 999;
         }
     }
 }

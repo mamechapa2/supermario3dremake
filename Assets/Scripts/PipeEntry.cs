@@ -55,21 +55,23 @@ public class PipeEntry : MonoBehaviour
     private IEnumerator WaitingForPipe()
     {
         MainPlayer.GetComponent<ThirdPersonMovement>().enabled = false;
-
+        MainPlayer.GetComponent<CharacterController>().enabled = false;
         PipeSound.Play();
 
         FadeScreenObject.SetActive(true);
         FadeScreenAnimator.enabled = true;
         pipeCollider.enabled = true;
-        yield return new WaitForSeconds((float)0.5);
-
         
+        yield return new WaitForSeconds((float)0.5);
         MainPlayer.transform.position = exit.transform.position;
 
+        print(MainPlayer.transform.position.ToString());
+        
+        print(MainPlayer.transform.position.ToString());
         //yield return new WaitForSeconds((float)1.5);
 
         //FadeScreenAnimator.enabled = false;
-        //pipeCollider.enabled = false;
+        pipeCollider.enabled = false;
         //FadeScreenAnimator.enabled = true;
 
         //yield return new WaitForSeconds(1);
@@ -77,7 +79,9 @@ public class PipeEntry : MonoBehaviour
         //FadeScreenObject.SetActive(false);
 
         //print("wtf");
+        MainPlayer.GetComponent<CharacterController>().enabled = true;
         MainPlayer.GetComponent<ThirdPersonMovement>().enabled = true;
+        StoodOn = 0;
 
     }
 }

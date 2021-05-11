@@ -8,21 +8,21 @@ public class Level02Death : MonoBehaviour
     public AudioSource deathSound;
     public GameObject player;
     public AudioSource levelSound;
+    public AudioSource lostMushroom;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private IEnumerator OnTriggerEnter(Collider col)
     {
-        print("heryeyeyeyeye");
         if (col.tag.Equals("Player"))
         {
             if (!GlobalLives.bigMario)
@@ -39,9 +39,11 @@ public class Level02Death : MonoBehaviour
             }
             else
             {
+                lostMushroom.Play();
                 GlobalLives.bigMario = false;
                 player.transform.localScale -= new Vector3((float)0.3, (float)0.3, (float)0.3);
             }
         }
     }
 }
+

@@ -21,11 +21,11 @@ public class PlatformMoveHorizontal : MonoBehaviour
 
         if (direction == 1)
         {
-            transform.Translate(Vector3.right * Time.deltaTime);
+            transform.Translate(Vector3.right * 3 * Time.deltaTime);
         }
         else
         {
-            transform.Translate(Vector3.left * Time.deltaTime);
+            transform.Translate(Vector3.left * 3 * Time.deltaTime);
         }
 
         if (currentPoint > resetPointRight && direction == 1)
