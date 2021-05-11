@@ -22,10 +22,13 @@ public class MushroomCollect : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            this.transform.position = new Vector3(0, -1000, 0);
-            growSound.Play();
-            player.transform.localScale += new Vector3((float)0.3, (float)0.3, (float)0.3);
-            GlobalLives.bigMario = true;
+            if (!GlobalLives.bigMario)
+            {
+                this.transform.position = new Vector3(0, -1000, 0);
+                growSound.Play();
+                player.transform.localScale += new Vector3((float)0.3, (float)0.3, (float)0.3);
+                GlobalLives.bigMario = true;
+            }
         }
     }
 }

@@ -41,33 +41,43 @@ public class PipeEntry : MonoBehaviour
             if (StoodOn == 1)
             {
                 StartCoroutine(WaitingForPipe());
+                //MainPlayer.GetComponent<ThirdPersonMovement>().enabled = false;
+                //print("Exit " + exit.transform.position.ToString());
+                //MainPlayer.transform.position = exit.transform.position;
+                //print("Player" + MainPlayer.transform.position.ToString());
+                //MainPlayer.GetComponent<ThirdPersonMovement>().enabled = true;
+                ////Debug.Log("Player");
+                //print("Play");
             }
         }
     }
 
     private IEnumerator WaitingForPipe()
     {
+        MainPlayer.GetComponent<ThirdPersonMovement>().enabled = false;
+
         PipeSound.Play();
 
         FadeScreenObject.SetActive(true);
+        FadeScreenAnimator.enabled = true;
         pipeCollider.enabled = true;
-
         yield return new WaitForSeconds((float)0.5);
 
-        FadeScreenAnimator.enabled = true;
+        
         MainPlayer.transform.position = exit.transform.position;
 
-        yield return new WaitForSeconds((float)1.5);
+        //yield return new WaitForSeconds((float)1.5);
 
-        FadeScreenAnimator.enabled = false;
-        pipeCollider.enabled = false;
-        FadeScreenAnimator.enabled = true;
+        //FadeScreenAnimator.enabled = false;
+        //pipeCollider.enabled = false;
+        //FadeScreenAnimator.enabled = true;
 
-        yield return new WaitForSeconds(1);
-        FadeScreenAnimator.enabled = false;
-        FadeScreenObject.SetActive(false);
+        //yield return new WaitForSeconds(1);
+        //FadeScreenAnimator.enabled = false;
+        //FadeScreenObject.SetActive(false);
 
-        print("wtf");
-        
+        //print("wtf");
+        MainPlayer.GetComponent<ThirdPersonMovement>().enabled = true;
+
     }
 }
