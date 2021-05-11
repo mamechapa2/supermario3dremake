@@ -12,10 +12,22 @@ public class GlobalLives : MonoBehaviour
     public GameObject lifeTextBox;
     public static bool bigMario = false;
 
+    private bool startedBefore = false;
     // Start is called before the first frame update
     void Start()
     {
-        lives = startingLives;
+            //lives = startingLives;
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        if (GameObject.Find("LifeMonitor") != this.gameObject)
+        {
+            Destroy(GameObject.Find("LifeMonitor"));
+        }
+        print("awake");
+        
     }
 
     // Update is called once per frame
