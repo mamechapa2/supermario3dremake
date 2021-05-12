@@ -23,6 +23,8 @@ public class GoombaPatrol : MonoBehaviour
 
     public AudioSource spotted;
     public bool spottedBefore = false;
+    public bool terminarCamino = false;
+    private Transform puntoFinal;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,60 +38,82 @@ public class GoombaPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (parar)
+        if (terminarCamino)
         {
-            animator.speed = 0;
+            print(puntoFinal.ToString());
+            print(puntoFinal.ToString());
+            if(puntoFinal.position.x == transform.position.x && puntoFinal.position.z == transform.position.z)
+            {
+                terminarCamino = false;
+            }
+            else
+            {
+                Vector3 target = puntoFinal.position;
+                target.y = initialY;
+                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime * 2);
+                transform.LookAt(target);
+            }
         }
         else
         {
-            Vector3 target = moveSpots[randomSpot].position;
-            float dist = Vector3.Distance(player.transform.position, transform.position);
-            if (dist < visionRadius)
+            if (parar)
             {
-                if (!spottedBefore)
+                animator.speed = 0;
+            }
+            else
+            {
+                Vector3 target = moveSpots[randomSpot].position;
+                float dist = Vector3.Distance(player.transform.position, transform.position);
+                if (dist < visionRadius)
                 {
-                    spotted.Play();
-                    spottedBefore = true;
-                }
+                    if (!spottedBefore)
+                    {
+                        spotted.Play();
+                        spottedBefore = true;
+                    }
 
-                if (player.transform.position.y > this.transform.position.y)
-                {
-
+                    if (player.transform.position.y > this.transform.position.y)
+                    {
+                        print("he guardado el camino");
+                        puntoFinal = player.transform;
+                        terminarCamino = true;
+                    }
+                    else
+                    {
+                        target = player.transform.position;
+                        perseguir = true;
+                        caminar = false;
+                        terminarCamino = false;
+                    }
                 }
                 else
                 {
-                    target = player.transform.position;
-                    perseguir = true;
-                    caminar = false;
+                    spottedBefore = false;
+                    perseguir = false;
+                    caminar = true;
                 }
-            }
-            else
-            {
-                spottedBefore = false;
-                perseguir = false;
-                caminar = true;
-            }
 
-            if (caminar)
-            {
-                animator.speed = 0.5f;
-                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-                transform.LookAt(moveSpots[randomSpot]);
-            }
-            else
-            {
-                if (perseguir)
+                if (caminar)
                 {
-                    animator.speed = 1;
-                    target.y = initialY;
-                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime * 2);
-                    transform.LookAt(target);
+                    animator.speed = 0.5f;
+                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                    transform.LookAt(moveSpots[randomSpot]);
                 }
-            }
+                else
+                {
+                    if (perseguir)
+                    {
+                        animator.speed = 1;
+                        target.y = initialY;
+                        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime * 2);
+                        transform.LookAt(target);
+                    }
+                }
 
-            if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
-            {
-                StartCoroutine(esperar());
+                if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+                {
+                    StartCoroutine(esperar());
+                }
             }
         }
     }
