@@ -8899,7 +8899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d993946469860bc46828c83a39a70175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLives: 3
+  startingLives: 1
   internalLives: 0
   lifeTextBox: {fileID: 395022766}
 --- !u!4 &364905110
@@ -33853,7 +33853,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359858956}
-  m_LocalRotation: {x: -0.0031215316, y: 0.99057287, z: -0.13502331, w: -0.02290053}
+  m_LocalRotation: {x: -0.0031215379, y: 0.99057287, z: -0.13502333, w: -0.02290057}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

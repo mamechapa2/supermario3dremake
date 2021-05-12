@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GlobalLives : MonoBehaviour
 {
-    public int startingLives;
-    public static int lives = 3;
+    public int startingLives = 3;
+    public static int lives;
     public int internalLives;
     public GameObject lifeTextBox;
     public static bool bigMario = false;
@@ -16,7 +16,7 @@ public class GlobalLives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            //lives = startingLives;
+        lives = startingLives;
     }
 
     private void Awake()
@@ -44,7 +44,9 @@ public class GlobalLives : MonoBehaviour
 
     IEnumerator gameOver()
     {
+        lives = startingLives;
         yield return new WaitForSeconds((float)2.9);
         SceneManager.LoadScene(3);
+        
     } 
 }
