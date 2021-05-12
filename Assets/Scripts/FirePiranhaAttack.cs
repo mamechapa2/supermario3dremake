@@ -11,12 +11,10 @@ public class FirePiranhaAttack : MonoBehaviour
     public float visionRadius;
 
     public Animator animator;
-
     private bool shootNow = true;
     // Start is called before the first frame update
     void Start()
     {
-        animator.speed = 0;
     }
 
     // Update is called once per frame
@@ -32,10 +30,8 @@ public class FirePiranhaAttack : MonoBehaviour
     public IEnumerator shoot()
     {
         shootNow = false;
-        animator.speed = 0.5f;
         Instantiate(prefab, startPos.position, Quaternion.identity).SetActive(true);
         yield return new WaitForSeconds(2);
-        animator.speed = 0;
         
         yield return new WaitForSeconds(waitTimeBeforeShooting);
         shootNow = true;

@@ -21,7 +21,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public Vector3 velocity;
     public float gravity = -9.8f;
-    bool isGrounded;
+    public static bool isGrounded;
 
     private Animator animator;
 
