@@ -7,6 +7,9 @@ public class TorpedoTedFollowPlayer : MonoBehaviour
     public GameObject player;
     public float speed;
     public float timeBeforeExplode = 10;
+
+    public GameObject explosion;
+    public AudioSource explosionAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,10 @@ public class TorpedoTedFollowPlayer : MonoBehaviour
     private IEnumerator explode()
     {
         yield return new WaitForSeconds(timeBeforeExplode);
+        Instantiate(explosion, transform.position, Quaternion.identity).SetActive(true);
+        explosionAudio.Play();
+
+        yield return new WaitForSeconds(1);
         Destroy(this.gameObject);
     }
 }
