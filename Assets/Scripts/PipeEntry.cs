@@ -11,15 +11,14 @@ public class PipeEntry : MonoBehaviour
     public Animator FadeScreenAnimator;
     public GameObject FadeScreenObject;
     public AudioSource PipeSound;
+    public GameObject exit;
 
     public int StoodOn;
-    public int qwerty;
     
 
     void OnTriggerEnter(Collider col)
     {
         StoodOn = 1;
-        MainPlayer = col.gameObject;
         print(StoodOn);
     }
     void OnTriggerExit(Collider col)
@@ -41,29 +40,48 @@ public class PipeEntry : MonoBehaviour
         {
             if (StoodOn == 1)
             {
-                transform.position = new Vector3(0, -1000, 0);
                 StartCoroutine(WaitingForPipe());
-                //pipeCollider.enabled = true;               
-                qwerty = 1;
-
+                //MainPlayer.GetComponent<ThirdPersonMovement>().enabled = false;
+                //print("Exit " + exit.transform.position.ToString());
+                //MainPlayer.transform.position = exit.transform.position;
+                //print("Player" + MainPlayer.transform.position.ToString());
+                //MainPlayer.GetComponent<ThirdPersonMovement>().enabled = true;
+                ////Debug.Log("Player");
+                //print("Play");
             }
         }
     }
 
-    IEnumerator WaitingForPipe()
+    private IEnumerator WaitingForPipe()
     {
+        MainPlayer.GetComponent<ThirdPersonMovement>().enabled = false;
+        MainPlayer.GetComponent<CharacterController>().enabled = false;
         PipeSound.Play();
+
         FadeScreenObject.SetActive(true);
+        FadeScreenAnimator.enabled = true;
         pipeCollider.enabled = true;
+        
         yield return new WaitForSeconds((float)0.5);
-        FadeScreenAnimator.enabled = true;
-        yield return new WaitForSeconds((float)0.5);
-        FadeScreenAnimator.enabled = false;
+        MainPlayer.transform.position = exit.transform.position;
+
+        print(MainPlayer.transform.position.ToString());
+        
+        print(MainPlayer.transform.position.ToString());
+        //yield return new WaitForSeconds((float)1.5);
+
+        //FadeScreenAnimator.enabled = false;
         pipeCollider.enabled = false;
-        MainPlayer.transform.position = new Vector3(10, -4, 0);
-        FadeScreenAnimator.enabled = true;
-        yield return new WaitForSeconds(1);
-        FadeScreenAnimator.enabled = false;
-        FadeScreenObject.SetActive(false);
+        //FadeScreenAnimator.enabled = true;
+
+        //yield return new WaitForSeconds(1);
+        //FadeScreenAnimator.enabled = false;
+        //FadeScreenObject.SetActive(false);
+
+        //print("wtf");
+        MainPlayer.GetComponent<CharacterController>().enabled = true;
+        MainPlayer.GetComponent<ThirdPersonMovement>().enabled = true;
+        StoodOn = 0;
+
     }
 }
