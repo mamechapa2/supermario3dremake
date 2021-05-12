@@ -19,8 +19,9 @@ public class GlobalCoins : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        if (GameObject.Find("CoinMonitor") != this.gameObject)
+        if (GameObject.Find("CoinMonitor").gameObject != this.gameObject)
         {
+            
             Destroy(GameObject.Find("CoinMonitor"));
         }
         print("awake");

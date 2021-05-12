@@ -20,7 +20,7 @@ public class GameOverToMenu : MonoBehaviour
     IEnumerator restart()
     {
         yield return new WaitForSeconds(5);
-        GlobalLives.lives += 3;
+        //GlobalLives.lives += 3;
         SceneManager.LoadScene(0);
     }
 }

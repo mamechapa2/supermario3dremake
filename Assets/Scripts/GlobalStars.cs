@@ -23,8 +23,8 @@ public class GlobalStars : MonoBehaviour
         {
             Destroy(GameObject.Find("StarsMonitor"));
         }
-        print("awake");
 
+        print("awake");
     }
 
     // Update is called once per frame
