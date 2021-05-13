@@ -23,12 +23,16 @@ public class UnlockPipe : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pipe.SetActive(true);
+        GlobalStars.starsCount += 1;
+        print("xDDDDDDDDDDDDDDDDDD");
+        this.GetComponent<MeshCollider>().isTrigger = false;
         this.GetComponent<MeshCollider>().enabled = false;
-        star.transform.position = new Vector3(0, -1000, 0);
+        pipe.SetActive(true);
+        
+        this.transform.position = new Vector3(0, -1000, 0);
         starAudio.Play();
         unlockAudio.Play();
-        GlobalStars.starsCount += 1;
+        
         print("1 star");
 
         
