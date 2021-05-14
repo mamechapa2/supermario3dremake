@@ -14,12 +14,6 @@ public class GameOverToMenu : MonoBehaviour
         StartCoroutine(restart());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator restart()
     {
         yield return new WaitForSeconds(5);

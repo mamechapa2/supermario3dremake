@@ -16,10 +16,4 @@ public class MenuScript : MonoBehaviour
             Destroy(GameObject.Find("Canvas"));
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

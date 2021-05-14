@@ -7,17 +7,6 @@ public class Level01End : MonoBehaviour
 {
     public GameObject fadeScreen;
     public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private IEnumerator OnTriggerEnter(Collider col)
     {
@@ -25,6 +14,6 @@ public class Level01End : MonoBehaviour
         fadeScreen.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds((float)0.5);
         fadeScreen.GetComponent<Animator>().enabled = false;
-        SceneManager.LoadScene(4); //CAMBIAAAAAAAAAAAAAAAAAAAAAR
+        SceneManager.LoadScene(4);
     }
 }

@@ -11,12 +11,6 @@ public class MenuButtons : MonoBehaviour
         Cursor.visible = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

@@ -9,17 +9,6 @@ public class Level02Death : MonoBehaviour
     public GameObject player;
     public AudioSource levelSound;
     public AudioSource lostMushroom;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private IEnumerator OnTriggerEnter(Collider col)
     {

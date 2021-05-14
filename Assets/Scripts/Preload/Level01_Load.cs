@@ -11,10 +11,4 @@ public class Level01_Load : MonoBehaviour
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(6);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
