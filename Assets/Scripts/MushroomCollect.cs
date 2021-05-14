@@ -6,6 +6,8 @@ public class MushroomCollect : MonoBehaviour
 {
     public AudioSource growSound;
     public GameObject player;
+
+    public AudioSource life;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,12 @@ public class MushroomCollect : MonoBehaviour
                 growSound.Play();
                 player.transform.localScale += new Vector3((float)0.3, (float)0.3, (float)0.3);
                 GlobalLives.bigMario = true;
+            }
+            else
+            {
+                this.transform.position = new Vector3(0, -1000, 0);
+                life.Play();
+                GlobalLives.lives += 1;
             }
         }
     }

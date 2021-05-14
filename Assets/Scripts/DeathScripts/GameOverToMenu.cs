@@ -8,6 +8,9 @@ public class GameOverToMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(GameObject.Find("StarsMonitor"));
+        Destroy(GameObject.Find("CoinMonitor"));
+        Destroy(GameObject.Find("LifeMonitor"));
         StartCoroutine(restart());
     }
 

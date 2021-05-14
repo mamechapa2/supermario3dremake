@@ -22,30 +22,6 @@ public class GlobalLives : MonoBehaviour
 
     private void Awake()
     {
-        //DontDestroyOnLoad(this.gameObject);
-
-        //if (globalLives == null)
-        //{
-        //    print("awake 1 global lives");
-        //    globalLives = this;
-        //    DontDestroyOnLoad(gameObject);
-        //}
-        //else if (globalLives != this)
-        //{
-        //    print("awake 2 global lives");
-        //    DontDestroyOnLoad(gameObject);
-        //}
-
-        //GameObject[] otros = GameObject.FindGameObjectsWithTag("GameControlLives");
-
-        //foreach (GameObject objeto in otros)
-        //{
-        //    if(objeto != this.gameObject)
-        //    {
-
-        //    }
-        //}
-
         DontDestroyOnLoad(gameObject);
         if (GameObject.Find("LifeMonitor").gameObject != this.gameObject)
         {

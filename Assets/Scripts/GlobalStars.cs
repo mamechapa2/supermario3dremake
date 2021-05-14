@@ -18,6 +18,7 @@ public class GlobalStars : MonoBehaviour
 
     private void Awake()
     {
+        starsCount = 0;
         DontDestroyOnLoad(gameObject);
         if (GameObject.Find("StarsMonitor") != this.gameObject)
         {
