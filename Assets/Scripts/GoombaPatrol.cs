@@ -106,7 +106,6 @@ public class GoombaPatrol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("El gooooooooooomba" + other.name);
         if (!other.tag.Equals("Player"))
         {
             perseguir = false;

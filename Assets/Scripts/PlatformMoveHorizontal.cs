@@ -11,6 +11,7 @@ public class PlatformMoveHorizontal : MonoBehaviour
 
     private GameObject target = null;
     private Vector3 offset;
+    
     // Start is called before the first frame update
     void Start()
     {

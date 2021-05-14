@@ -26,6 +26,7 @@ public class BossControl : MonoBehaviour
     public AudioSource explosionAudio;
     public AudioSource levelMusic;
     public AudioSource endMusic;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +51,6 @@ public class BossControl : MonoBehaviour
             die = false;
             shootNow = false;
             StopCoroutine(shoot());
-            //PONERLE MUSIQUILLA
-            //TP AL PJ A LA SALA CON EL TOAD
         }
         if (shootNow && !die)
         {
@@ -72,7 +71,6 @@ public class BossControl : MonoBehaviour
     public static void setDie()
     {
         die = true;
-        print("cambiado");
     }
 
     public IEnumerator dissapear()

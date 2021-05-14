@@ -12,10 +12,6 @@ public class Timer : MonoBehaviour
     public GameObject player;
     bool calculating = false;
     bool death = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()

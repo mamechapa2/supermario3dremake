@@ -9,11 +9,6 @@ public class PipeEntryExit : MonoBehaviour
     public GameObject player;
     public GameObject exit;
     public GameObject fadeScreen;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +17,6 @@ public class PipeEntryExit : MonoBehaviour
         {
             if (estaEncima)
             {
-                print("bajando");
                 //animacion.enabled = true;
                 StartCoroutine(usePipe());
             }
@@ -31,13 +25,11 @@ public class PipeEntryExit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("encima");
         estaEncima = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        print("se baja");
         estaEncima = false;
     }
 
@@ -56,7 +48,6 @@ public class PipeEntryExit : MonoBehaviour
         yield return new WaitForSeconds(0.9f);
         fadeScreen.GetComponent<Animator>().enabled = false;
         //Desactiva scripts y character controller 
-        print("jodeeeeeeeeeeeeeeeeer");
         player.GetComponent<ThirdPersonMovement>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
         
@@ -75,6 +66,5 @@ public class PipeEntryExit : MonoBehaviour
         yield return new WaitForSeconds(0.9f);
         fadeScreen.SetActive(false);
         fadeScreen.GetComponent<Animator>().enabled = false;
-
     }
 }

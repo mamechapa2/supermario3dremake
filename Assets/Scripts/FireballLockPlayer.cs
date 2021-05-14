@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FireballLockPlayer : MonoBehaviour
 {
-
     public Transform player;
     public float destroyTime = 20;
     public float speed;
@@ -31,7 +30,6 @@ public class FireballLockPlayer : MonoBehaviour
         }
         else
         {
-            print("destroy");
             Destroy(this.gameObject);
         }
     }
@@ -45,21 +43,16 @@ public class FireballLockPlayer : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        print("1 trigger");
         if (!other.tag.Equals("Player"))
         {
-            print("2 trigger");
             Destroy(this.gameObject);
-
         }
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        print("1 collision");
         if (!collision.gameObject.tag.Equals("Player")){
-            print("2 collision");Destroy(this.gameObject);
-            
+            Destroy(this.gameObject);
         }
     }
 }

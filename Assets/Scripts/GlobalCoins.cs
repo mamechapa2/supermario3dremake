@@ -10,21 +10,13 @@ public class GlobalCoins : MonoBehaviour
     public int internalCoin;
     public AudioSource lifeSound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         if (GameObject.Find("CoinMonitor").gameObject != this.gameObject)
         {
-            
             Destroy(GameObject.Find("CoinMonitor"));
         }
-        print("awake");
 
     }
 

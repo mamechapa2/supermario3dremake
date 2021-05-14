@@ -10,12 +10,6 @@ public class GlobalStars : MonoBehaviour
     public GameObject end = null;
     private bool activeBefore = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void Awake()
     {
         starsCount = 0;
@@ -24,8 +18,6 @@ public class GlobalStars : MonoBehaviour
         {
             Destroy(GameObject.Find("StarsMonitor"));
         }
-
-        print("awake");
     }
 
     // Update is called once per frame
@@ -37,7 +29,6 @@ public class GlobalStars : MonoBehaviour
         if(starsCount >= maxNumStars && !activeBefore && end != null)
         {
             activeBefore = true;
-            print("final activo");
             end.SetActive(true);
         }
 
